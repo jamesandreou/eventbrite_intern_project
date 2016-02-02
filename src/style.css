@@ -1,0 +1,13 @@
+*{
+  font-family: 'Nunito', sans-serif;
+}
+
+.wrapper{
+  text-align: center;
+}
+
+.form{
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: left;
+}
