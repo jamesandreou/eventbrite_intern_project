@@ -20,7 +20,11 @@ export class Search extends Component{
   }
 
   setGraphType(){
-    this.props.root.setType(this.refs.selectType.getValue());
+    this.props.root.setGType(this.refs.gType.getValue());
+  }
+
+  setDataType(){
+    this.props.root.setDType(this.refs.dType.getValue());
   }
 
   handleKeyPress(e){
@@ -76,10 +80,15 @@ export class Search extends Component{
           onChange={this.handleChange.bind(this)}
           onKeyPress={this.handleKeyPress.bind(this)} />
           <Input type="select" label="Graph Type" placeholder="Pie"
-            ref="selectType" onChange={this.setGraphType.bind(this)}>
+            ref="gType" onChange={this.setGraphType.bind(this)}>
            <option value="Pie">Pie</option>
-           <option value="Bar">Bar</option>
          </Input>
+         <Input type="select" label="Data Type" placeholder="Categories"
+           ref="dType" onChange={this.setDataType.bind(this)}>
+          <option value="Categories">Categories</option>
+          <option value="Country">Country</option>
+          <option value="City">City</option>
+        </Input>
       </div>
     );
   }

@@ -6,6 +6,14 @@
   text-align: center;
 }
 
+.graphWrapper{
+  text-align: center;
+}
+
+.no-legend{
+  display: none;
+}
+
 .form{
   padding-left: 10%;
   padding-right: 10%;
