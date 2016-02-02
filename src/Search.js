@@ -33,6 +33,7 @@ export class Search extends Component{
     }
   }
 
+  // Look up events with API
   search(app){
     const myToken = '?token=LGQ5F3PAWYCTNMMA7MIH';
     const root = 'https://www.eventbriteapi.com/v3/events/search/';

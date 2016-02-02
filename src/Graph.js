@@ -31,6 +31,7 @@ export class Graph extends Component{
             ? e.venue.address.country : "None";
           break;
       }
+      // Count occurences of each field
       if(found[field] === undefined){
         found[field] = 1;
       }else{
@@ -46,10 +47,12 @@ export class Graph extends Component{
     for(let d in data){
       if(found[d.name] <= 1){
         d.name = 'Other';
+        found[d.name] = 'skip';
       }
     }
     // Create chart series
     for(let f in found){
+      if(found[f] === 'skip') continue;
       series.push({
         name : f,
         field : f
@@ -73,6 +76,7 @@ export class Graph extends Component{
     );
   }
 
+  // use d3 to render a pie chart element
   renderPie(data, width, height, title){
     const d = data.data;
     const radius = height / 3;
